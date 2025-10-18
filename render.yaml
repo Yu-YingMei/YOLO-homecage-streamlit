@@ -2,6 +2,7 @@ services:
   - type: web
     name: yolo-homecage-demo
     env: python
+    rootDir: "."            # 明確指定根目錄，確保會讀到 runtime.txt
     plan: free
     buildCommand: |
       pip install --upgrade pip
