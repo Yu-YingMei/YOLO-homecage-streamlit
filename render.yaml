@@ -2,14 +2,13 @@ services:
   - type: web
     name: yolo-homecage-demo
     env: python
-    pythonVersion: 3.11.9
     plan: free
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
       pip check
     startCommand: >
-      streamlit run app.py
+      python -m streamlit run app.py
       --server.port=$PORT
       --server.address=0.0.0.0
     envVars:
