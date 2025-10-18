@@ -4,9 +4,9 @@ services:
     env: python
     plan: free
     buildCommand: |
+      pip install --upgrade pip
       pip install -r requirements.txt
-      # 若套件有輕微相依衝突，不影響執行；此命令確保部署不中斷
-      pip check || true
+      pip check
     startCommand: >
       streamlit run app.py
       --server.port=$PORT
